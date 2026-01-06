@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Registro Financiero – Naturales Buenavida</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -47,11 +48,14 @@
     }
   </style>
 
+  <!-- 🔐 Control de acceso en frontend -->
   <script>
-    const usuario = prompt("Ingrese su correo corporativo");
-    if (!usuario) {
-      alert("Acceso denegado");
-      document.body.innerHTML = "";
+    const CODIGO_ACCESO = "NB-2026-SEGURIDAD";
+    const codigoIngresado = prompt("Ingrese el código de acceso");
+
+    if (codigoIngresado !== CODIGO_ACCESO) {
+      alert("Acceso no autorizado");
+      window.location.href = "https://naturalesbuenavida.github.io/";
     }
   </script>
 </head>
@@ -66,11 +70,100 @@
     action="https://script.google.com/macros/s/AKfycbzYwFAeZDod2IhLFTr29buyc9N89DNuymwXmYz_NOJrXBN2MZpVbReBVf61G21F5_NLVA/exec"
   >
 
-    <!-- Usuario oculto -->
-    <input type="hidden" name="usuario" value="" id="usuario">
+    <!-- 🔐 Código oculto para validación backend -->
+    <input type="hidden" name="codigo" value="NB-2026-SEGURIDAD">
 
     <label>Concepto</label>
     <input type="text" name="concepto" required>
+
+    <label>Fecha</label>
+    <input type="date" name="fecha" required>
+
+    <label>Observaciones</label>
+    <textarea name="observaciones"></textarea>
+
+    <label>Forma de pago</label>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro Financiero – Naturales Buenavida</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef7f1;
+      padding: 30px;
+    }
+    .form-container {
+      max-width: 520px;
+      margin: auto;
+      background: #fff;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+    h1 {
+      text-align: center;
+      color: #2f6e43;
+    }
+    label {
+      display: block;
+      margin-top: 14px;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background: #2f6e43;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+
+  <!-- 🔐 Control de acceso en frontend -->
+  <script>
+    const CODIGO_ACCESO = "NB-2026-SEGURIDAD";
+    const codigoIngresado = prompt("Ingrese el código de acceso");
+
+    if (codigoIngresado !== CODIGO_ACCESO) {
+      alert("Acceso no autorizado");
+      window.location.href = "https://naturalesbuenavida.github.io/";
+    }
+  </script>
+</head>
+
+<body>
+
+<div class="form-container">
+  <h1>Registro Financiero</h1>
+
+  <form
+    method="POST"
+    action="https://script.google.com/macros/s/AKfycbzYwFAeZDod2IhLFTr29buyc9N89DNuymwXmYz_NOJrXBN2MZpVbReBVf61G21F5_NLVA/exec"
+  >
+
+    <!-- 🔐 Código oculto para validación backend -->
+    <input type="hidden" name="codigo" value="NB-2026-SEGURIDAD">
+
+    <label>Concepto</label>
+    <select name="Concepto" required>
+      <option value="">Seleccione</option>
+      <option>Pago</option>
+      <option>Venta</option>
+    </select>
 
     <label>Fecha</label>
     <input type="date" name="fecha" required>
@@ -83,7 +176,7 @@
       <option value="">Seleccione</option>
       <option>Efectivo</option>
       <option>Nequi</option>
-      <option>CTA AHORROS</option>
+      <option>Cta ahorros</option>
       <option>Otro</option>
     </select>
 
@@ -94,7 +187,20 @@
   </form>
 </div>
 
-<script>
+</body>
+</html>
+
+
+    <label>Valor (COP)</label>
+    <input type="number" name="valor" required>
+
+    <button type="submit">Guardar</button>
+  </form>
+</div>
+
+</body>
+</html>
+
   document.getElementById("usuario").value = usuario;
 </script>
 
