@@ -2,16 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Formulario visible</title>
-  <style>
-    body { font-family: Arial; background:#eef7f1; padding:40px }
-    .box { background:#fff; padding:20px; border-radius:10px }
-  </style>
+  <title>JS OK</title>
 </head>
 <body>
-  <div class="box">
-    <h1>Formulario visible</h1>
-    <p>El problema NO es el HTML ni el CSS</p>
-  </div>
+
+<h1 id="titulo">Cargando...</h1>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("titulo").innerText = "JavaScript funcionando";
+  });
+</script>
+
 </body>
 </html>
