@@ -2,17 +2,11 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   const form = document.getElementById("registroForm");
-  const idInput = document.getElementById("id");
+  
 
   if (!form || !idInput) {
     console.error("Formulario o campo ID no encontrado");
     return;
-  }
-
-  function generarID() {
-    const now = new Date();
-    const random = Math.floor(Math.random() * 1000);
-    return `ID-${now.getFullYear()}${now.getMonth()+1}${now.getDate()}-${random}`;
   }
 
   idInput.value = generarID();
