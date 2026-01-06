@@ -1,44 +1,11 @@
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const form = document.getElementById("registroForm");
-  
-
-  if (!form || !idInput) {
-    console.error("Formulario o campo ID no encontrado");
-    return;
-  }
-
-  idInput.value = generarID();
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // 🔑 CLAVE
-
-    const data = {
-      id: idInput.value,
-      concepto: document.getElementById("concepto").value,
-      fecha: document.getElementById("fecha").value,
-      observaciones: document.getElementById("observaciones").value,
-      pago: document.getElementById("pago").value,
-      valor: document.getElementById("valor").value
-    };
-
-    fetch("https://script.google.com/macros/s/AKfycbybs-Dxxuso6B4ohH1p_TUXx9PWF1QYIWJRj03YT31HNug7bf5L5IwcypXST9peYpLjfQ/exec", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    })
-    .then(res => res.json())
-    .then(() => {
-      alert("Registro guardado correctamente ✅");
-      form.reset();
-      idInput.value = generarID();
-    })
-    .catch(err => {
-      alert("Error al guardar ❌");
-      console.error(err);
-    });
-  });
-
-});
-</script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Prueba GitHub Pages</title>
+</head>
+<body>
+  <h1>GitHub Pages funciona</h1>
+  <p>Si ves esto, el problema NO es GitHub.</p>
+</body>
+</html>
